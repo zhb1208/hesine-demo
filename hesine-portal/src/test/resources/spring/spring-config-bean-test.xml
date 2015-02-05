@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-autowire="byName" default-lazy-init="false">
+
+    <!--***************************** Add Your init Bean ***********************************-->
+    <bean id="initSystemBean" class="com.hesine.manager.web.init.InitSystemBean">
+        <property name="propertyFile" value="important-${hesine.run.evn}.properties"></property>
+    </bean>
+
+</beans>

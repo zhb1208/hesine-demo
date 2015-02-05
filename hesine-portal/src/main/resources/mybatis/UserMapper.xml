@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.hesine.manager.dao.UserDao">
+
+
+	<!--
+		获取用户: 输出直接映射到对象, login_name列要"as loginName"以方便映射 ,team_id as "team.id"创建team对象并赋值
+	-->
+	<select id="get" parameterType="int" resultType="com.hesine.manager.vo.User">
+		select id, name, email,
+		login_name as loginName,
+		team_id as "team.id"
+		from ss_user
+		where id=#{id} and status = '1'
+	</select>
+
+    <select id="getUserByLoginName" parameterType="java.lang.String" resultType="com.hesine.manager.vo.User">
+		select id, name, email,
+		login_name as loginName,
+		password as password,
+		team_id as "team.id"
+		from ss_user
+		where login_name=#{loginName} and status = '1'
+	</select>
+
+	<!-- 查询用户,演示: 1.输入用map传入多个参数 2.<where>语句, 智能添加where和and关键字 3.输出直接映射对象 -->
+	<select id="list" parameterType="map" resultType="com.hesine.manager.vo.User">
+		select id, name, email,
+		login_name as loginName,
+		team_id as "team.id"
+		from ss_user
+		<where>
+            status = '1'
+			<if test="loginName != null and loginName != ''" >
+				and login_name=#{loginName}
+			</if>
+			<if test="email != null and email != ''">
+				and email=#{email}
+			</if>
+		</where>
+	</select>
+
+    <!-- 查询用户,演示: 1.输入用map传入多个参数 2.<where>语句, 智能添加where和and关键字 3.输出直接映射对象 -->
+    <select id="pageList" parameterType="com.hesine.manager.web.model.UserModel" resultType="com.hesine.manager.vo.User">
+        select id, name, email,
+        login_name as loginName,
+        team_id as "team.id"
+        from ss_user
+        <where>
+            status = '1'
+            <if test="loginName != null and loginName != ''" >
+                and login_name=#{loginName}
+            </if>
+            <if test="email != null and email != ''">
+                and email=#{email}
+            </if>
+        </where>
+        order by id desc
+        <if test="beginIndex!=null and pageSize!=null">
+            limit #{beginIndex},#{pageSize}
+        </if>
+    </select>
+
+    <!-- 获取用户总数 状态是个列表 -->
+    <select id="listCount" parameterType="com.hesine.manager.web.model.UserModel" resultType="int">
+        SELECT
+        count(id)
+        FROM ss_user
+        <where>
+            status = '1'
+            <if test="loginName != null and loginName != ''" >
+                and login_name=#{loginName}
+            </if>
+            <if test="email != null and email != ''">
+                and email=#{email}
+            </if>
+        </where>
+    </select>
+
+	<!-- 插入用户： 1.由数据库生成id并赋值到user对象 2.输入用对象, 嵌套属性表达式#{team.id} -->
+	<insert id="save" parameterType="com.hesine.manager.vo.User" useGeneratedKeys="true" keyProperty="id">
+        <selectKey resultType="long" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+		insert into ss_user (
+		login_name, name, password, email, team_id)
+		values (
+		#{loginName}, #{name}, #{password}, #{email},
+		#{team.id})
+	</insert>
+
+    <!-- update -->
+    <update id="update"  parameterType="com.hesine.manager.vo.User" >
+        update ss_user
+        set
+          name = #{name}
+          <if test="loginName != null">
+            , login_name=#{loginName}
+          </if>
+          <if test="password != null">
+            , password=#{password}
+          </if>
+          <if test="email != null">
+            , email=#{email}
+          </if>
+          <if test="status != null">
+            , status=#{status}
+          </if>
+        where id = #{id}
+    </update>
+
+    <!-- remove -->
+    <update id="remove"  parameterType="com.hesine.manager.vo.User" >
+        update ss_user set status = '0' where id = #{id}
+    </update>
+	
+	<!-- 删除用户 -->
+	<delete id="delete" parameterType="int">
+	     delete from ss_user where id=#{id}
+	</delete>
+</mapper> 

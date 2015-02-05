@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2014, hesine Technologies,Inc. All rights reserved.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="remoteService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl" value="${client.remote.service.url}"/>
+        <property name="serviceInterface" value="com.hesine.boss.remote.RemoteServiceInterface"/>
+    </bean>
+
+    <!-- 会话DAO -->
+    <bean id="sessionDAO" class="com.hesine.boss.client.ClientSessionDAO">
+        <property name="appKey" value="${client.app.key}"/>
+        <property name="remoteService" ref="remoteService"/>
+    </bean>
+
+</beans>

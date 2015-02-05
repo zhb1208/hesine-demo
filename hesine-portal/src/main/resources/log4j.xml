@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %-5p%m%n" />
+		</layout>
+	</appender>
+    <appender name="DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${hesine.log.path}/lottery_debug.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %-5p%m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="DEBUG" />
+		</filter>
+	</appender>
+	
+	<!--<appender name="INFO" class="org.apache.log4j.DailyRollingFileAppender">-->
+		<!--<param name="File" value="${hesine.log.path}/hesine_info.log" />-->
+		<!--<layout class="org.apache.log4j.PatternLayout">-->
+			<!--<param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %-5p%m%n" />-->
+		<!--</layout>-->
+		<!--<filter class="org.apache.log4j.varia.LevelRangeFilter">-->
+			<!--<param name="LevelMin" value="INFO" />-->
+			<!--<param name="LevelMax" value="WARN" />-->
+		<!--</filter>-->
+	<!--</appender>-->
+
+    <appender name="hesine_business" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${hesine.log.path}/hesine_business.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %x %t %m%n"/>
+        </layout>
+    </appender>
+
+	<appender name="WEBSERVICECLIENT" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${hesine.log.path}/hesine_webservice.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %-5p%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="EXCEPTION" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${hesine.log.path}/hesine_exception.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %-5p%l%m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+	
+    <appender name="FILE-VELOCITY" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${hesine.log.path}/hesine_velocity.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[HESINE_PORTAL]%d{yyyy-MM-dd HH:mm:ss} %-5p%m%n"/>
+        </layout>
+    </appender>
+
+    <!--business logger-->
+    <!--<logger name="hesine_business"  additivity="false">-->
+        <!--<level  value="INFO"/>-->
+        <!--<appender-ref  ref="hesine_business"/>-->
+    <!--</logger>-->
+
+    <category name="com.hesine" additivity="true">
+        <priority value="WARN"/>
+        <appender-ref ref="EXCEPTION"/>
+    </category>
+
+    <category name="com.hesine.manager" additivity="true">
+        <priority value="${hesine.log.level}"/>
+        <appender-ref ref="hesine_business"/>
+    </category>
+
+    <category name="com.hesine.manager.webservice" additivity="false">
+        <priority value="${hesine.log.level}"/>
+        <appender-ref ref="WEBSERVICECLIENT"/>
+    </category>
+
+    <category name="org.apache.velocity" additivity="false">
+        <priority value="${hesine.log.level}"/>
+        <appender-ref ref="FILE-VELOCITY"/>
+    </category>
+
+    <root>
+        <priority value="${hesine.log.level}"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</log4j:configuration>

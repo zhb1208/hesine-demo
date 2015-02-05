@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link href="html/css/login.css" rel="stylesheet" type="text/css" id="cssStyle">
+    <script src="html/js/jquery-1.js" type="text/javascript"></script>
+    <script src="html/js/jquery.i18n.properties-1.0.9.js" type="text/javascript"></script>
+    <script src="html/js/public/common.js" type="text/javascript"></script>
+    <script src="html/js/account/cookie.js" type="text/javascript"></script>
+    <script src="html/js/account/login.js" type="text/javascript"></script>
+    <title id="login_title"></title>
+</head>
+<body>
+<div id="lowexploreTip"
+     style="display: none; width: 100%; height: 90px; border: 1px solid #ffc209; border-width: 1px 0; clear: both; position: relative; overflow: hidden; background-color: #EDE4C5; font-family: Arial, Helvetica, Tahoma, sans-serif; font-size: 12px; color: #000;">
+    <div style="width: 728px; margin: 0 auto">
+        <div style="position: absolute; right: 3px; top: 1px; float: right;">
+            <a href="#" onclick='javascript:this.parentNode.parentNode.parentNode.style.display="none"; return false;'
+               style="color: #000; font-size: 16px; line-height: 16px; font-weight: bold; text-decoration: none;">
+                × </a>
+        </div>
+        <div style="margin-top: 7px; margin-bottom: 7px;">
+            <div style="float: left; width: 281px; overflow: hidden;">
+                <div style="margin-top: 10px;">
+                    <span style="font-weight: bold">注意</span>: 为了得到最好的体验效果，建议您升级到最新版本的Internet
+                    Explor（至少IE9+）或选择另一个web浏览器。
+                </div>
+            </div>
+            <div style="float: left; margin-left: 7px;">
+                <a href="http://www.mozilla-europe.org/firefox" target="_blank"><img src="html/images/firefox_logo.png"
+                                                                                     style="border: none;"
+                                                                                     alt="Get Firefox"></a>
+            </div>
+            <div style="float: left; margin-left: 5px;">
+                <a href="http://www.microsoft.com/downloads" target="_blank"><img src="html/images/ie_logo.png"
+                                                                                  style="border: none;"
+                                                                                  alt="Get IE"></a>
+            </div>
+            <div style="float: left; margin-left: 5px;">
+                <a href="http://www.apple.com/safari/download" target="_blank"><img src="html/images/safari_logo.png"
+                                                                                    style="border: none;"
+                                                                                    alt="Get Safari"></a>
+            </div>
+            <div style="float: left; margin-left: 5px;">
+                <a href="http://www.google.com/chrome" target="_blank"><img src="html/images/chrome_logo.png"
+                                                                            style="border: none;" alt="Get Chrome"></a>
+            </div>
+            <div style="float: left; margin-left: 5px;">
+                <a href="http://www.opera.com/download" target="_blank"><img src="html/images/opera_logo.png"
+                                                                             style="border: none;" alt="Get Opera"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header"></div>
+<div class="loginContainer">
+    <div class="loginPage">
+        <div class="loginBox">
+            <form id="inputForm" class="form-horizontal" action="#" method="post">
+                <div class="title" id="login_label_title"></div>
+                <div class="account">
+                    <label id="login_label_name"></label><input id="userName" name="username" type="text"><span></span><br>
+                    <label id="login_label_password"></label><input id="password" name="password" type="password"><span></span>
+                </div>
+                <div class="saveLogin">
+                    <i id="rememberMe" class="uncheck"></i> <label for="checkbox" id="login_label_remenber"></label>
+                </div>
+                <div class="tip"></div>
+                <div>
+                    <input id="login_btn" value="" class="loginBtn" type="button" >
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

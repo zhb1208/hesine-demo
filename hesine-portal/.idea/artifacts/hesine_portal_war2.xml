@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="hesine-portal:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="hesine-portal.war">
-      <element id="artifact" artifact-name="hesine-portal:war exploded" />
-    </root>
-  </artifact>
-</component>

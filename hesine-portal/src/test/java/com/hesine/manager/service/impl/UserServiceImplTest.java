@@ -112,7 +112,7 @@ public class UserServiceImplTest {
         assertEquals(pager.getResult().get(0), user);
 
         // 设置期望
-        int pageNo = 101;
+        int pageNo = 1;
         userModel.setPageNo(pageNo);
         Mockito.when(userDao.listCount(userModel)).thenReturn(total);
         Mockito.when(userDao.pageList(userModel)).thenReturn(list);

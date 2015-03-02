@@ -515,7 +515,7 @@
                 <!-- 日志级别 -->
                 <hesine.log.level>INFO</hesine.log.level>
                 <hesine.run.evn>dev</hesine.run.evn>
-                <hesine.log.path>~\log\hesine_log</hesine.log.path>
+                <hesine.log.path>/Users/zhanghongbing/test_lottery/logs/dev</hesine.log.path>
             </properties>
         </profile>
 

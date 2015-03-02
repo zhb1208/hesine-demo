@@ -87,28 +87,28 @@
 		insert into ss_user (
 		login_name, name, password, email, team_id)
 		values (
-		#{loginName}, #{name}, #{password}, #{email},
-		#{team.id})
+		#{t.loginName}, #{t.name}, #{t.password}, #{t.email},
+		#{t.team.id})
 	</insert>
 
     <!-- update -->
     <update id="update"  parameterType="com.hesine.manager.vo.User" >
         update ss_user
         set
-          name = #{name}
-          <if test="loginName != null">
-            , login_name=#{loginName}
+          name = #{t.name}
+          <if test="t.loginName != null">
+            , login_name=#{t.loginName}
           </if>
-          <if test="password != null">
-            , password=#{password}
+          <if test="t.password != null">
+            , password=#{t.password}
           </if>
-          <if test="email != null">
-            , email=#{email}
+          <if test="t.email != null">
+            , email=#{t.email}
           </if>
-          <if test="status != null">
-            , status=#{status}
+          <if test="t.status != null">
+            , status=#{t.status}
           </if>
-        where id = #{id}
+        where id = #{t.id}
     </update>
 
     <!-- remove -->

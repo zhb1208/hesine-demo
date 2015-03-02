@@ -1,5 +1,6 @@
 package com.hesine.manager.dao;
 
+import com.hesine.framework.dao.BaseDao;
 import com.hesine.framework.dao.MyBatisRepository;
 import com.hesine.manager.vo.User;
 import com.hesine.manager.web.model.UserModel;
@@ -17,14 +18,7 @@ import java.util.Map;
  */
 @MyBatisRepository
 @Repository
-public interface UserDao {
-
-    /**
-     * 根据id获得用户
-     * @param id
-     * @return
-     */
-    public User get(@Param("id") Long id);
+public interface UserDao extends BaseDao<User> {
 
     /**
      * 获取用户
@@ -32,13 +26,6 @@ public interface UserDao {
      * @return
      */
     public User getUserByLoginName(@Param("loginName") String loginName);
-
-    /**
-     * 列表
-     * @param parameters
-     * @return
-     */
-    public List<User> list(Map<String, Object> parameters);
 
     /**
      * 按分页查询数据
@@ -54,26 +41,6 @@ public interface UserDao {
      * @return 用户条数
      */
     public int listCount(UserModel userModel);
-
-    /**
-     * 保存
-     * @param user
-     */
-    public long save(User user);
-
-    /**
-     * 更新
-     * @param user
-     * @return
-     */
-    public int update(User user);
-
-    /**
-     * 物理删除
-     * @param id
-     * @return
-     */
-    public int delete(Long id);
 
     /**
      * 逻辑删除

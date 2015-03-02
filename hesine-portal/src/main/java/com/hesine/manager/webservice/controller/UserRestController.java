@@ -3,6 +3,7 @@ package com.hesine.manager.webservice.controller;
 import com.hesine.framework.utils.mapper.BeanMapper;
 import com.hesine.framework.utils.page.Pager;
 import com.hesine.manager.service.UserService;
+import com.hesine.manager.utils.GsonUtils;
 import com.hesine.manager.vo.User;
 import com.hesine.manager.web.model.UserModel;
 import com.hesine.manager.webservice.controller.dto.UserDto;
@@ -41,8 +42,10 @@ public class UserRestController {
     @ResponseBody
     public ResultDto getUser(HttpServletRequest request, @PathVariable("id") Long id) {
         ResultDto<UserDto> dto = new ResultDto<UserDto>();
+        LOGGER.info("UserRestController.getUser user.id:{}",id);
         // 验证参数
         if (id == null) {
+            LOGGER.info("UserRestController.getUser user.id is null!");
             dto.setStatus(StatusCode.STATUS_FAIL);
             dto.setErrorCode(StatusCode.ERROR_EMPTY_PARAM);
             return dto;
@@ -61,6 +64,7 @@ public class UserRestController {
                 userDto = BeanMapper.map(userDB, UserDto.class);
                 dto.setT(userDto);
             }
+            LOGGER.info("UserRestController.getUser success!");
             return dto;
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage());
@@ -82,6 +86,7 @@ public class UserRestController {
         ResultDto<User> dto = new ResultDto<User>();
         userModel.setPageSize(UserModel.DEFAULT_PAGE_SIZE);
         try {
+            LOGGER.info("UserRestController.list begin");
             // 设置成功参数
             if (userModel != null && org.apache.commons.lang.StringUtils.isNotBlank(userModel.getLoginName())) {
                 userModel.setLoginName(userModel.getLoginName().trim());
@@ -91,6 +96,7 @@ public class UserRestController {
             }
             Pager<User> pager = userService.pageList(userModel);
             dto.setPager(pager);
+            LOGGER.info("UserRestController.list success!");
             return dto;
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage());
@@ -109,6 +115,7 @@ public class UserRestController {
 
         ResultDto dto = new ResultDto();
         try {
+            LOGGER.info("UserRestController.save    user:{}", GsonUtils.toJson(user));
             if (user != null) {
                 if (user.getId() != null) {
                     User nowUser = userService.getUser(user.getId());
@@ -133,6 +140,7 @@ public class UserRestController {
                         nowUser.setEmail(user.getEmail().trim());
                     }
                     userService.update(nowUser);
+                    LOGGER.info("UserRestController.save update success!");
                 } else {
                     if (StringUtils.isNotBlank(user.getLoginName())) {
                         user.setLoginName(user.getLoginName().trim());
@@ -149,6 +157,7 @@ public class UserRestController {
                     user.setSalt("1");
                     user.setStatus("1");
                     userService.saveUser(user);
+                    LOGGER.info("UserRestController.save save success!");
                 }
             } else {
                 LOGGER.error("用户不能为空");
@@ -185,14 +194,17 @@ public class UserRestController {
             return dto;
         }
         try {
+            LOGGER.info("UserRestController.remove  user.id:{}", id);
             // 设置成功参数
             boolean result = userService.remove(id);
             if (!result) {
+                LOGGER.info("UserRestController.remove remove fail!");
                 LOGGER.error("删除不成功");
                 dto.setStatus(StatusCode.STATUS_FAIL);
                 dto.setErrorCode(StatusCode.ERROR_NOT_EXIST);
                 return dto;
             }
+            LOGGER.info("UserRestController.remove remove success!");
             return dto;
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage());

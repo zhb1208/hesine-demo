@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import com.hesine.framework.dao.MyBatisRepository;
 import ${packageName}<#if moduleName!=''>.${moduleName}</#if>.web.model.${ClassName}Model;
-import ${packageName}.dao.BaseDao;
+import com.hesine.framework.dao.BaseDao;
 import ${packageName}<#if moduleName!=''>.${moduleName}</#if>.vo.${ClassName};
 
 /**

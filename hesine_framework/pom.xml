@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>hesine_top</artifactId>
-        <groupId>hesine</groupId>
+        <artifactId>hesine-top</artifactId>
+        <groupId>com.hesine</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>hesine</groupId>
-    <artifactId>hesine_framework</artifactId>
+    <groupId>com.hesine</groupId>
+    <artifactId>hesine-framework</artifactId>
     <version>${parent.version}</version>
     <packaging>jar</packaging>
     <dependencies>

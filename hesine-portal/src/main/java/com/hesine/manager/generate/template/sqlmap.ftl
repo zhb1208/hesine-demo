@@ -101,9 +101,9 @@
         values (
         <#list fileds as filed>
             <#if !filed_has_next>
-                ${r"#{"}${filed.name}${r"}"}
+                ${r"#{t."}${filed.name}${r"}"}
             <#else >
-                ${r"#{"}${filed.name}${r"},"}
+                ${r"#{t."}${filed.name}${r"},"}
             </#if>
         </#list>
         )
@@ -118,13 +118,13 @@
             <#if filed.name != 'id'>
                 <#assign fcount = fcount + 1/>
                 <#if fcount == 1>
-                ${filed.name} = ${r"#{"}${filed.name}${r"}"}
+                ${filed.name} = ${r"#{t."}${filed.name}${r"}"}
                 <#else >
-                , ${filed.name} = ${r"#{"}${filed.name}${r"}"}
+                , ${filed.name} = ${r"#{t."}${filed.name}${r"}"}
                 </#if>
             </#if>
         </#list>
-        where id = ${r"#{id}"}
+        where id = ${r"#{t.id}"}
     </update>
 
     <!-- 删除数据 -->

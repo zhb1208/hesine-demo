@@ -81,7 +81,7 @@ public class FileGenUtils {
         // 生成 Entity
         Template template = getTemplate(tplPath, FileGenUtils.SQLMAP_FTL);
         String content = FreeMarkers.renderTemplate(template, model);
-        String genfilePath = filePath+separator+model.get("ClassName")+".xml";
+        String genfilePath = filePath+separator+model.get("ClassName")+"Mapper.xml";
         writeFile(content, genfilePath);
         logger.info("Xml: {}", genfilePath);
     }

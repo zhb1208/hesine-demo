@@ -1,4 +1,4 @@
-package com.hesine.manager.dao;
+package com.hesine.framework.dao;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -12,13 +12,13 @@ import java.util.Map;
  * Time: 上午10:54
  * To change this template use File | Settings | File Templates.
  */
-public interface BaseDao<T> {
+public interface BasePKStrDao<T> {
     /**
      * 根据id获得对象
      * @param id
      * @return
      */
-    public T get(@Param("id") Long id);
+    public T get(@Param("id") String id);
 
     /**
      * 列表
@@ -45,6 +45,6 @@ public interface BaseDao<T> {
      * @param id
      * @return
      */
-    public int delete(Long id);
+    public int delete(String id);
 
 }

@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:16px; background-color:#f6f7fb; font-family: Arial,Tahoma,Helvetica,"Microsoft Yahei","微软雅黑",STHeiti,"宋体";}
+ul{list-style: none;}
+ul,li{margin:0px; padding:0px}
+a{text-decoration:none}
+
+.header{margin:0 auto; background-color:#e9ecf5; width:100%; height:150px}
+
+.loginContainer{width:100%; background:url(../images/login/bg_login_container.png) repeat-x; height:504px}
+.loginPage{margin:0px auto; width:1000px; height:504px; }
+.loginBox{ float:left; margin-left:280px; width:640px; height:504px; background:url(../images/login/bg_login_box.png) no-repeat}
+.loginBox div{ float:left; width:440px;}
+.loginBox div a{ color:#666}
+.loginBox .title{ margin-left:141px; width:248px; font-size:20px; font-weight:bold; line-height:60px; height:60px; color:#FFF}
+.loginBox .account{ line-height:54px; margin-top:30px}
+.loginBox .account label{float:left; width:60px; margin-left:30px; font-size:16px; line-height:30px; }
+.loginBox .account input{float:left; width:286px; height:28px; margin-left: 20px; padding-left:6px}
+.loginBox .account span{ float:left; margin-left:10px; margin-top:10px; width:20px; height:20px}
+.loginBox .account span.ok{background:url(../images/login/duihao.png) no-repeat;}
+.loginBox .account span.error{background:url(../images/login/cha.png) no-repeat;}
+.loginBox .saveLogin{ margin-left:90px; line-height:20px; height:32px; margin-top:15px; font-size:14px; width:280px;}
+.uncheck{ float:left; background:url(../images/login/uncheck.png) no-repeat; width:26px; height:20px}
+.check{ float:left; background:url(../images/login/check.png) no-repeat; width:26px; height:20px}
+.tip{float:left; width:230px; color:#f00; line-height:28px; text-align:center}
+.loginBtn { margin-top:13px; margin-left:89px; background:#44b549; color:#FFF; font-size:20px; font-weight:bold; border:none; width:295px; height:46px; cursor:pointer}
+.findPwd{ margin-left:180px; line-height:40px;}

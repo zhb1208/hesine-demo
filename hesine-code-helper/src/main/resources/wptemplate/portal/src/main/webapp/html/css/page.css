@@ -1,0 +1,81 @@
+.page {
+    color: #666;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.demo {
+    background-color: #f7f7f7;
+    border: 1px solid #fff;
+    margin: 10px auto;
+    padding: 10px;
+    width: 930px;
+}
+
+.sendlist table {
+    border: 1px solid #cccccc;
+    font-size: 12px;
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+.table-bordered {
+    border: 1px solid #dddddd;
+}
+
+.table {
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+table {
+    background-color: transparent;
+    max-width: 90%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.sendlist td.r2 {
+    line-height: 24px;
+    width: 100px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #dddddd;
+}
+
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+    padding: 5px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #dddddd;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.sendlist td {
+    padding: 20px;
+    vertical-align: top;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}

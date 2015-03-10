@@ -399,7 +399,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                 </plugin>
-                <!-- 生成源码jar -->
+                 <!--生成源码jar-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>

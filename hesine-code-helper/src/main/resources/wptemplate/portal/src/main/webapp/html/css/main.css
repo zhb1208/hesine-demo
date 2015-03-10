@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; background:#f4f5fa; color:#333333; font-family: Arial,Tahoma,Helvetica,"Microsoft Yahei","微软雅黑",STHeiti,"宋体";}
+ul{list-style: none;}
+ul,li{margin:0px; padding:0px}
+a{text-decoration:none}
+input,select,textarea{outline:0 none;}
+
+/* header */
+.header{width:100%; height:78px; background:#e9e9f5;}
+.headerContent{width:1245px; margin:0px auto; height:78px;}
+.headerLeft{float:left; margin-top:30px; height:27px; line-height:27px}
+.headerLeft li{float:left; margin-right:36px; font-size:22px;}
+.headerLeft li.last{ border-left:1px #666666 solid; padding-left:36px}
+.headerRight{float:right; margin-top:46px; height:16px; line-height:16px}
+.headerRight li{float:right; margin-left:21px; font-size:16px; color:#666666}
+.headerRight li.first{ border-left:1px #666666 solid; padding-left:21px}
+
+.container{width:1245px; margin:0px auto; margin-top:35px; overflow:hidden}
+
+/* menu */
+.menu{ float:left; width:200px; background:#ebecf1; overflow:hidden; padding-bottom:30px; font-size:14px; padding-top:5px}
+.menu ul{float:left; margin-top:15px; width:200px; overflow:hidden}
+.menu li{float:left; width:175px; height:40px; line-height:40px; padding-left:25px; } 
+.menu li span{float:left;width:100px; margin-top:10px; height:30px; line-height:23px; padding-left:35px;}
+.menu li span.iconFunc{background:url(../images/icon_func.png) no-repeat;}
+.menu li span.iconMange{background:url(../images/icon_manage.png) no-repeat;}
+.menu li span.iconStat{background:url(../images/icon_stat.png) no-repeat;}
+.menu li.title{padding-left:50px; font-weight:900}
+.menu li a{margin-left:48px; color:#565657; font-weight:700}
+.menu li.on{background:#dfdfeb}
+
+/* 右边内容 */
+.content{float:left; width:955px; background:#fff; overflow:hidden; padding:40px 45px}
+
+/* 右边内容 - title */
+.contentTitle{float:left; width:950px; height:30px; line-height:30px; font-size:16px; color:#6d6d71; font-weight:900}
+
+/* 右边内容 - nav */
+.contentNav{float:left; width:100%; display:inline-block; margin-top:6px; height:40px; font-size:14px;}
+.contentNav span{margin-right:35px; height:35px; line-height:40px;  font-weight:700 }
+.contentNav span.on{ padding-bottom:5px; border-bottom:3px #0166ff solid; color:#0166ff; padding-left:20px; padding-right:20px;}
+.contentNav span a{ color:#333}
+.contentNav .queryBox{float:right; margin-right:4px; display:inline-block;  background:url(../images/query_bg.png) no-repeat; border:none; width:135px; height:30px;  cursor:pointer; padding:0px; }
+.contentNav .queryBox .inputTitle{float:left; display:inline-block; margin:2px 0 0 5px;  border:none; width:95px; height:22px; }
+.contentNav .queryBox .queryBtn{float:left; display:inline-block; margin-left:7px;  margin-top:4px; background:url(../images/query.png) no-repeat; border:none; width:22px;  height:20px; cursor:pointer}
+
+/* 单/多图文消息列表 */ 
+.msgList{float:left; }
+.msgList .row{float:left; width:330px; overflow:hidden; }
+.msgList .row  ul{float:left; overflow:hidden; width:295px; }
+.msgList .row  li{float:left; width:288px; margin-bottom:30px; overflow:hidden; border:1px #CCCCCC solid }
+.msgList .row li.mask{ background-color: #000;
+ 	cursor:pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position:relative;
+    top: 0;
+    width: 100%;
+    z-index: 10;}
+.msgList .row li .selected{ background:url(../images/select.png) no-repeat; width:73px; height:73px;
+     left: 45%;
+    line-height: 999em;
+    margin-left: -23px;
+    margin-top: -23px;
+    overflow: hidden;
+    position: absolute;
+    top: 45%;
+    z-index: 20;}
+.msgList .row .title{ padding-left:10px; font-size:14px; height:35px; line-height:43px; font-weight:700; }
+.msgList .row .date{ padding-left:10px; font-size:14px; height:30px; width:278px; line-height:26px}
+.msgList .row .desc{ margin-left:10px; margin-top:10px; font-size:13px; padding-bottom:10px; line-height:23px}
+.msgList .row .act{ float:left; background:#dcdbe1; height:40px; width:100%; display:inline-block}
+.msgList .row .act span{ float:left; width:143px;height:40px; padding-top:5px; text-align:center; display:inline-block; cursor:pointer}
+.msgList .row .act span.line{border-left:1px #fff solid}
+.msgList .row .item{float:left; width:268px; margin:10px; border-top: 1px solid #ccc; padding-top: 10px; }
+.msgList .row .item .itemTxt{float:left; width:188px; vertical-align:middle; line-height:25px;}
+.msgList .row .item .itemImg{float:right; width:80px;}
+.msgList .row .item .itemImg img{width:80px; height:80px;}
+.msgList span img{ border:none;}
+
+/* 图片消息列表 */
+.msgPicList{float:left; }
+.msgPicList .row{float:left; width:315px; overflow:hidden; }
+.msgPicList .row  ul{float:left; overflow:hidden; width:270px;}
+.msgPicList .row  li{float:left; width:268px; margin-bottom:30px; overflow:hidden; border:1px #CCCCCC solid }
+.msgPicList .row li.mask{ background-color: #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position:relative;
+    top: 0;
+    width: 100%;
+    z-index: 10;}
+.msgPicList .row li .selected{ background:url(../images/select.png) no-repeat; width:73px; height:73px;
+     left: 45%;
+    line-height: 999em;
+    margin-left: -23px;
+    margin-top: -23px;
+    overflow: hidden;
+    position: absolute;
+    top: 45%;
+    z-index: 20;}
+.msgPicList .row .pic img{  width:268px; }
+.msgPicList .row .filename{ padding-left:10px; margin-top:10px; font-size:14px; height:23px; width:255px; line-height:23px;}
+.msgPicList .row .size{ margin-left:10px; font-size:13px; padding-bottom:10px; line-height:20px; color:#999}
+.msgPicList .row .act{ float:left; background-color:#dcdbe1; height:40px; width:100%; display:inline-block}
+.msgPicList .row .act span{ float:left; width:132px; height:40px; padding-top:5px; text-align:center; display:inline-block; cursor:pointer}
+.msgPicList .row .act span.line{border-left:1px #fff solid}
+
+/* 视频消息列表 */
+.msgVideoList{float:left; }
+.msgVideoList .row{float:left; width:315px; overflow:hidden; }
+.msgVideoList .row  ul{float:left; overflow:hidden; width:270px;}
+.msgVideoList .row  li{float:left; width:268px; margin-bottom:30px; overflow:hidden; border:1px #CCCCCC solid }
+.msgVideoList .row li.mask{ background-color: #000;
+	cursor:pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position:relative;
+    top: 0;
+    width: 100%;
+    z-index: 10;}
+.msgVideoList .row li .selected{ background:url(../images/select.png) no-repeat; width:73px; height:73px;
+     left: 45%;
+    line-height: 999em;
+    margin-left: -23px;
+    margin-top: -23px;
+    overflow: hidden;
+    position: absolute;
+    top: 45%;
+    z-index: 20;}
+.msgVideoList .row .pic{ float:left; width:100px}
+.msgVideoList .row .pic img{width:100px; }
+.msgVideoList .row .desc{ float:left; width:150px; margin-left:10px; margin-top:10px; font-size:13px; padding-bottom:10px; line-height:25px} 
+.msgVideoList .row .date{ padding-left:10px; font-size:14px; height:30px; width:278px; line-height:26px}
+.msgVideoList .row .act{ float:left; background-color:#dcdbe1; height:40px; width:100%; display:inline-block}
+.msgVideoList .row .act span{ float:left; width:132px; height:40px; padding-top:5px; text-align:center; display:inline-block; cursor:pointer}
+.msgVideoList .row .act span a img{border:none}
+.msgVideoList .row .act span.line{border-left:1px #fff solid}
+
+/* 分页 */
+.page{ float:right; margin-right:20px; margin-top:30px; height:25px; line-height:25px; font-size:13px; display:inline-block; color:#666}
+.page span{float:right; width:25px; text-align:center; cursor: pointer;}
+.page span.on{ background-color:#999}
+.page span.other{width:40px; height:100px;}
+.page span a{color:#666}
+
+/* footer */
+.footer{width:100%; margin-top:35px; height:46px; background:#c7c9d5}
+.footer ul{margin:0px auto; height:30px; width:920px;  }
+.footer li{float:left; height:16px;margin-top:15px; margin-left:25px; padding-right:25px; border-right:1px #666 solid } 
+.footer li a{ color:#333}
+.footer li.last{border-right:none}
+
+/* 缩略图大小*/
+.compressImag img{height:148px; width:288px}
+
+/* 上传按钮透明化处理 */
+.uploadFile{position:absolute; left:0; left:-12px\9; *left:-70px; _left:-2px;top:0; height:30px; width:100px; cursor:pointer; filter:alpha(opacity=0); opacity:0; }

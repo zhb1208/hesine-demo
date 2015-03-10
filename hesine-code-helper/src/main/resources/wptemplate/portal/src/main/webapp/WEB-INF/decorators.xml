@@ -1,0 +1,16 @@
+<decorators defaultdir="/layouts">
+
+	<excludes>
+		<pattern>/static/*</pattern>
+	</excludes>
+	
+    <!-- 默认装饰页面, 在需要装饰的页面增加<meta name="decorator" content="default"/> -->
+    <decorator name="default" page="default.jsp" />
+    <decorator name="portal" page="portal.jsp" />
+    <decorator name="manager" page="manager.jsp" />
+    <decorator name="default_mb" page="mobile/layouts/default.jsp" />
+
+
+
+
+</decorators> 

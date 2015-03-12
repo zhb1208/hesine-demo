@@ -118,9 +118,9 @@
             <#if filed.name != 'id'>
                 <#assign fcount = fcount + 1/>
                 <#if fcount == 1>
-                ${filed.name} = ${r"#{t."}${filed.name}${r"}"}
+                ${filed.dbName} = ${r"#{t."}${filed.name}${r"}"}
                 <#else >
-                , ${filed.name} = ${r"#{t."}${filed.name}${r"}"}
+                , ${filed.dbName} = ${r"#{t."}${filed.name}${r"}"}
                 </#if>
             </#if>
         </#list>

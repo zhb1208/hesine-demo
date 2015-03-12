@@ -4,6 +4,7 @@
 package ${packageName}<#if moduleName!=''>.${moduleName}</#if>.web.model;
 
 import com.hesine.framework.model.BaseModel;
+import java.util.Date;
 
 /**
 * ${functionName} model

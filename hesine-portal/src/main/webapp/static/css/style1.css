@@ -1,0 +1,253 @@
+.jPaginate{
+    height:34px;
+    position:relative;
+    color:#a5a5a5;
+    font-size:small;
+    width:100%;
+}
+.jPaginate a{
+    line-height:15px;
+    height:18px;
+    cursor:pointer;
+    padding:2px 5px;
+    margin:2px;
+    float:left;
+}
+.jPag-control-back{
+    position:absolute;
+    left:0px;
+}
+.jPag-control-front{
+    position:absolute;
+    top:0px;
+}
+.jPaginate span{
+    cursor:pointer;
+}
+ul.jPag-pages{
+    float:left;
+    list-style-type:none;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+ul.jPag-pages li{
+    display:inline;
+    float:left;
+    padding:0px;
+    margin:0px;
+}
+ul.jPag-pages li a{
+    float:left;
+    padding:2px 5px;
+}
+span.jPag-current{
+    cursor:default;
+    font-weight:normal;
+    line-height:15px;
+    height:18px;
+    padding:2px 5px;
+    margin:2px;
+    float:left;
+}
+ul.jPag-pages li span.jPag-previous,
+ul.jPag-pages li span.jPag-next,
+span.jPag-sprevious,
+span.jPag-snext,
+ul.jPag-pages li span.jPag-previous-img,
+ul.jPag-pages li span.jPag-next-img,
+span.jPag-sprevious-img,
+span.jPag-snext-img{
+    height:22px;
+    margin:2px;
+    float:left;
+    line-height:18px;
+}
+
+ul.jPag-pages li span.jPag-previous,
+ul.jPag-pages li span.jPag-previous-img{
+    margin:2px 0px 2px 2px;
+    font-size:12px;
+    font-weight:bold;
+    width:10px;
+
+}
+ul.jPag-pages li span.jPag-next,
+ul.jPag-pages li span.jPag-next-img{
+    margin:2px 2px 2px 0px;
+    font-size:12px;
+    font-weight:bold;
+    width:10px;
+}
+span.jPag-sprevious,
+span.jPag-sprevious-img{
+    margin:2px 0px 2px 2px;
+    font-size:18px;
+    width:15px;
+    text-align:right;
+}
+span.jPag-snext,
+span.jPag-snext-img{
+    margin:2px 2px 2px 0px;
+    font-size:18px;
+    width:15px;
+    text-align:right;
+}
+ul.jPag-pages li span.jPag-previous-img{
+    background:transparent url(../images/previous.png) no-repeat center right;
+}
+ul.jPag-pages li span.jPag-next-img{
+    background:transparent url(../images/next.png) no-repeat center left;
+}
+span.jPag-sprevious-img{
+    background:transparent url(../images/sprevious.png) no-repeat center right;
+}
+span.jPag-snext-img{
+    background:transparent url(../images/snext.png) no-repeat center left;
+}
+
+
+
+* {
+    color: #333;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 14px;
+    height: 35px;
+    line-height: 18px;
+    padding: 8px;
+    width: 284px;
+}
+label {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px;
+    width: 284px;
+}
+.new {
+    padding: 8px;
+}
+.ipt_box {
+    float: left;
+    height: 50px;
+    position: relative;
+    width: 306px;
+}
+.box .ipt_box .bg_txt {
+    background: url("../images/ipt.png?v=10031") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    height: 35px;
+    width: 300px;
+}
+.input_box{
+    background: url("../images/ipt.png?v=10031") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    height: 35px;
+    width: 300px;
+}
+.control-label {
+    float: left;
+    font-size: 14px;
+    height: 44px;
+    line-height: 20px;
+    padding-right: 10px;
+    padding-top: 6px;
+    text-align: right;
+    width: 179px;
+}
+.page {
+    color: #666;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.demo {
+    background-color: #f7f7f7;
+    border: 1px solid #fff;
+    margin: 10px auto;
+    padding: 10px;
+    width: 930px;
+}
+
+.sendlist table {
+    border: 1px solid #cccccc;
+    font-size: 12px;
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+.table-bordered {
+    border: 1px solid #dddddd;
+}
+
+.table {
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+table {
+    background-color: transparent;
+    max-width: 90%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.sendlist td.r2 {
+    line-height: 24px;
+    width: 100px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #dddddd;
+}
+
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+    padding: 5px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #dddddd;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.sendlist td {
+    padding: 20px;
+    vertical-align: top;
+}
+
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+a {
+    background: none repeat scroll 0 0 transparent;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+

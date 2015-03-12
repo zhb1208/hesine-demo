@@ -287,15 +287,15 @@ public class Generate {
 
         // 生成 Controller
         FileGenUtils.generateController(tplPath, javaPath, model);
-//
-//        // 生成 add.ftl
-//        FileGenUtils.generateAddFtl(tplPath, viewPath, model);
-//
-//        // 生成 edit.ftl
-//        FileGenUtils.generateEditFtl(tplPath, viewPath, model);
 
-//        // 生成 list.ftl
-//        FileGenUtils.generateListFtl(tplPath, viewPath, model);
+        // 生成 add.ftl
+        FileGenUtils.generateAddFtl(tplPath, viewPath, model);
+
+        // 生成 edit.ftl
+        FileGenUtils.generateEditFtl(tplPath, viewPath, model);
+
+        // 生成 list.ftl
+        FileGenUtils.generateListFtl(tplPath, viewPath, model);
 
         logger.info("Generate Success.");
     }

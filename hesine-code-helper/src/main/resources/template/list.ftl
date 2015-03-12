@@ -8,6 +8,11 @@
 <body>
 <div class="panel-heading">${ClassName} List</div>
 <div class="panel-body">
+    <div>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='${r"${ctx}"}/${className}/list'">${ClassName}列表</button>
+        <button type="button" class="btn btn-success" onclick="window.location.href='${r"${ctx}"}/${className}/add'">新增${ClassName}</button>
+    </div>
+    <br>
     <c:if test="${r"${not empty message}"}">
         <div id="message" class="alert alert-success">
             <button data-dismiss="alert" class="close">×</button>
@@ -16,7 +21,7 @@
 
     <div class="row">
         <div class="offset4">
-            <form class="form-search" action="${r"${ctx}"}/portal/${className}/list" method="post" id="query_fm">
+            <form class="form-search" action="${r"${ctx}"}/${className}/list" method="post" id="query_fm">
                 <#--<label>名称：</label> <input type="text" name="name" class="input-small"-->
                                            <#--value="${r"${"}fn:escapeXml(${className}Model.name)}">-->
                 <button type="submit" class="btn" id="search_btn">Search</button>
@@ -27,7 +32,6 @@
     <table id="contentTable" class="table table-striped table-bordered table-condensed">
         <thead>
         <tr>
-            <th>#</th>
             <#list fileds as filed>
                 <th>${filed.comment}</th>
             </#list>
@@ -37,14 +41,13 @@
         <tbody>
         <c:forEach items="${r"${"}pager.result}" var="${className}">
             <tr>
-                <td>${user.id}&nbsp;</td>
-                <td>${user.loginName}&nbsp;</td>
-                <td>${user.name}&nbsp;</td>
-                <td>${user.email}&nbsp;</td>
+            <#list fileds as filed>
+                <td>${r"${"}${className}.${filed.name}}&nbsp;</td>
+            </#list>
                 <td>
-                    <a href="${r"${ctx}"}/portal/user/edit/${r"${"}${className}.id}" id="editLink-${user.loginName}">修改</a>
-                    <a href="${r"${ctx}"}/portal/user/view/${r"${"}${className}.id}" id="viewLink-${user.loginName}">查看</a>
-                    <a href="${r"${ctx}"}/portal/user/remove/${r"${"}${className}.id}" id="removeLink-${user.loginName}">删除</a>
+                    <a href="${r"${ctx}"}/${className}/edit/${r"${"}${className}.id}" id="editLink-${r"${"}${className}.id}">修改</a>
+                    <a href="${r"${ctx}"}/${className}/${r"${"}${className}.id}" id="viewLink-${r"${"}${className}.id}">查看</a>
+                    <a href="${r"${ctx}"}/${className}/delete/${r"${"}${className}.id}" id="removeLink-${r"${"}${className}.id}">删除</a>
                 </td>
             </tr>
         </c:forEach>

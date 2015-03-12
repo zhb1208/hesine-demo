@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.util.Date;
 
 import com.hesine.framework.vo.IdEntity;
 import com.hesine.framework.vo.IdStringEntity;

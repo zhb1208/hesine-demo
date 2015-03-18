@@ -99,13 +99,13 @@
         </#list>
         )
         values (
-        <#list fileds as filed>
-            <#if !filed_has_next>
-                ${r"#{t."}${filed.name}${r"}"}
-            <#else >
-                ${r"#{t."}${filed.name}${r"},"}
-            </#if>
-        </#list>
+    <#list fileds as filed>
+        <#if !filed_has_next>
+            ${r"#{t."}${filed.name}${r"}"}
+        <#else >
+            ${r"#{t."}${filed.name}${r"},"}
+        </#if>
+    </#list>
         )
     </insert>
 
@@ -115,20 +115,32 @@
         set
         <#assign fcount = 0/>
         <#list fileds as filed>
-            <#if filed.name != 'id'>
-                <#assign fcount = fcount + 1/>
-                <#if fcount == 1>
-                ${filed.dbName} = ${r"#{t."}${filed.name}${r"}"}
-                <#else >
-                , ${filed.dbName} = ${r"#{t."}${filed.name}${r"}"}
-                </#if>
+        <#if filed.name != 'id'>
+            <#assign fcount = fcount + 1/>
+            <#if fcount == 1>
+            ${filed.dbName} = ${r"#{t."}${filed.name}${r"}"}
+            <#else >
+            , ${filed.dbName} = ${r"#{t."}${filed.name}${r"}"}
             </#if>
+        </#if>
         </#list>
         where id = ${r"#{t.id}"}
     </update>
 
     <!-- 删除数据 -->
     <delete id="delete" parameterType="int">
+    <#assign fscount = 0/>
+    <#list fileds as filed>
+        <#if filed.name == 'status'>
+            <#assign fscount = fscount + 1/>
+        </#if>
+    </#list>
+    <#if fscount == 1>
+        <!-- 逻辑删除 -->
+        update ${tableName} set status='0' where id=${r"#{id}"}
+    <#else >
+        <!-- 物理删除 -->
         delete from ${tableName} where id=${r"#{id}"}
+    </#if>
     </delete>
 </mapper> 

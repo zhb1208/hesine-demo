@@ -119,14 +119,45 @@ public class ${ClassName}Controller {
                 if (${className}.getId() != null ){
                     ${ClassName} cur${ClassName} = ${className}Service.get${ClassName}(${className}.getId());
                     // TODO 服务端验证
-                    //if (StringUtils.isNotBlank(${className}.getName())){
-                    //    cur${ClassName}.setName(${className}.getName().trim());
+                    <#list fileds as filed>
+                    <#if filed.name=='modifyTime'>
+                    cur${ClassName}.set${filed.methodName}(DateUtils.getCurrent());
+                    <#elseif filed.name=='createTime' || filed.name=='id' || filed.name=='status'>
+                    <#elseif filed.dataType == 'String'>
+                    // ${filed.comment}
+                    //if (StringUtils.isNotBlank(${className}.get${filed.methodName}())){
+                    //    cur${ClassName}.set${filed.methodName}(${className}.get${filed.methodName}().trim());
                     //} else {
-                    //    cur${ClassName}.setName(${className}.getName());
+                    //    cur${ClassName}.set${filed.methodName}(${className}.get${filed.methodName}());
                     //}
+                    <#else >
+                    // ${filed.comment}
+                    //if (${className}.get${filed.methodName}() != null){
+                    //    cur${ClassName}.set${filed.methodName}(${className}.get${filed.methodName}());
+                    //}
+                    </#if>
+                    </#list>
                     ${className}Service.update(cur${ClassName});
                 }else{
                     // TODO 修改${ClassName}
+                <#list fileds as filed>
+                    <#if filed.name=='createTime' || filed.name=='modifyTime'>
+                    ${className}.set${filed.methodName}(DateUtils.getCurrent());
+                    <#elseif filed.name=='id' || filed.name=='status'>
+                    <#elseif filed.dataType == 'String'>
+                    // ${filed.comment}
+                    //if (StringUtils.isNotBlank(${className}.get${filed.methodName}())){
+                    //    ${className}.set${filed.methodName}(${className}.get${filed.methodName}().trim());
+                    //} else {
+                    //    ${className}.set${filed.methodName}(${className}.get${filed.methodName}());
+                    //}
+                    <#else >
+                    // ${filed.comment}
+                    //if (${className}.get${filed.methodName}() != null){
+                    //    ${className}.set${filed.methodName}(${className}.get${filed.methodName}());
+                    //}
+                    </#if>
+                </#list>
                     ${className}Service.save(${className});
                 }
             }else{

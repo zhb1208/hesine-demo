@@ -297,6 +297,10 @@ public class Generate {
         // 生成 list.ftl
         FileGenUtils.generateListFtl(tplPath, viewPath, model);
 
+        // 生成 view.ftl
+        FileGenUtils.generateViewFtl(tplPath, viewPath, model);
+
+
         logger.info("Generate Success.");
     }
 
@@ -307,8 +311,6 @@ public class Generate {
         // 方法二
         String packageName = "com.hesine.manager";
         String moduleName = "";
-
-
 
         // 获取表
         List<Map<String,String>> list = DBOperator.getTables("tb_");

@@ -22,9 +22,7 @@
     <div class="row">
         <div class="offset4">
             <form class="form-search" action="${r"${ctx}"}/${className}/list" method="post" id="query_fm">
-                <#--<label>名称：</label> <input type="text" name="name" class="input-small"-->
-                                           <#--value="${r"${"}fn:escapeXml(${className}Model.name)}">-->
-                <button type="submit" class="btn" id="search_btn">Search</button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn" id="search_btn">Search</button>
             </form>
         </div>
     </div>
@@ -32,9 +30,11 @@
     <table id="contentTable" class="table table-striped table-bordered table-condensed">
         <thead>
         <tr>
-            <#list fileds as filed>
-                <th>${filed.comment}</th>
-            </#list>
+        <#list fileds as filed>
+            <#if filed.name!='status'>
+            <th>${filed.comment}</th>
+            </#if>
+        </#list>
             <th>操作</th>
         </tr>
         </thead>
@@ -42,11 +42,13 @@
         <c:forEach items="${r"${"}pager.result}" var="${className}">
             <tr>
             <#list fileds as filed>
+                <#if filed.name!='status'>
                 <td>${r"${"}${className}.${filed.name}}&nbsp;</td>
+                </#if>
             </#list>
                 <td>
                     <a href="${r"${ctx}"}/${className}/edit/${r"${"}${className}.id}" id="editLink-${r"${"}${className}.id}">修改</a>
-                    <a href="${r"${ctx}"}/${className}/${r"${"}${className}.id}" id="viewLink-${r"${"}${className}.id}">查看</a>
+                    <a href="${r"${ctx}"}/${className}/view/${r"${"}${className}.id}" id="viewLink-${r"${"}${className}.id}">查看</a>
                     <a href="${r"${ctx}"}/${className}/delete/${r"${"}${className}.id}" id="removeLink-${r"${"}${className}.id}">删除</a>
                 </td>
             </tr>

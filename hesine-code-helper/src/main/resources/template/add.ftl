@@ -30,7 +30,7 @@ To change this template use File | Settings | File Templates.
             <input type="hidden" name="id" value="${r"${"}${className}.id}"/>
 
     <#list fileds as filed>
-        <#if filed.name!='id'>
+        <#if filed.name!='id' && filed.name!='createTime' && filed.name!='modifyTime' && filed.name!='status'>
             <div class="new" style="">
                 &nbsp;&nbsp;
                 <label for="${filed.name}" id="${className}_lable_${filed.name}" class="control-label">${filed.comment}:</label>

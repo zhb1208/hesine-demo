@@ -31,6 +31,7 @@ public class FileGenUtils {
     public static final String ADD_FTL = "add.ftl";
     public static final String EDIT_FTL = "edit.ftl";
     public static final String LIST_FTL = "list.ftl";
+    public static final String VIEW_FTL = "view.ftl";
     public static final String TEMPLATE_DIR = "/template";
 
     /**
@@ -232,6 +233,24 @@ public class FileGenUtils {
         String content = FreeMarkers.renderTemplate(template, model);
         String genfilePath = filePath+ SEPARATOR
                 +model.get("className")+ SEPARATOR +"list.jsp";
+        writeFile(content, genfilePath);
+        logger.info("Controller: {}", genfilePath);
+    }
+
+    /**
+     * 生成   view.ftl
+     * @param tplPath 模板路径
+     * @param filePath 生成文件路径
+     * @param model 填充对象
+     */
+    public static void generateViewFtl(String tplPath,
+                                       String filePath,
+                                       Map<String, Object> model) {
+        // 生成 Controller
+        Template template = getTemplate(tplPath, FileGenUtils.VIEW_FTL);
+        String content = FreeMarkers.renderTemplate(template, model);
+        String genfilePath = filePath+ SEPARATOR
+                +model.get("className")+ SEPARATOR +"view.jsp";
         writeFile(content, genfilePath);
         logger.info("Controller: {}", genfilePath);
     }

@@ -31,17 +31,17 @@
 
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">Manager function<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li class="">
-                            <a target="_blank" href="${ctx}/manager/user/list">list</a>
-                        </li>
-                        <li class="">
-                            <a target="_blank" href="${ctx}/manager/user/add">add</a>
-                        </li>
-                    </ul>
-                </li>
+                <%--<li class="dropdown">--%>
+                    <%--<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">Manager function<b class="caret"></b></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li class="">--%>
+                            <%--<a target="_blank" href="${ctx}/manager/user/list">list</a>--%>
+                        <%--</li>--%>
+                        <%--<li class="">--%>
+                            <%--<a target="_blank" href="${ctx}/manager/user/add">add</a>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
                 <li><a target="_blank" href="#">Philps framework教程</a></li>
                 <li><a target="_blank" href="#">网站实例</a></li>
                 <li><a href="#">关于</a></li>
